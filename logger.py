@@ -9,13 +9,12 @@ from eth_utils import to_checksum_address
 from github import Github, GithubException
 
 def call(chain, calldata):
-    infura_key = os.environ["INFURA_KEY"]
-    endpoint = "https://{}.infura.io/v3/{}".format(chain, infura_key)
+    endpoint = "https://fx-json-web3.functionx.io:8545"
     response = requests.post(endpoint, json={
         "jsonrpc": "2.0",
         "method": "eth_call",
         "params": [{
-            "to": "0xdA0Ab1e0017DEbCd72Be8599041a2aa3bA7e740F",
+            "to": "0x060361951aDa5365C06B7cB87D46B325747Da10D",
             "data": calldata
         }, "latest"],
         "id": 0
@@ -105,7 +104,7 @@ def update(chain):
 
 g = Github(os.environ["GITHUB_TOKEN"])
 repo = g.get_repo(os.environ["CHAINLOG_REPO"])
-chains = ["mainnet", "goerli"]
+chains = ["fxcoretestnet"]
 while True:
     for chain in chains:
         update(chain)
