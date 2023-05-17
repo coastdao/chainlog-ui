@@ -206,7 +206,7 @@
     }
 
     const getChecksum = (address, callback) => {
-        fetch(`https://coastdao.github.io/chainlog/checksum/${address}`).then(response => {
+        fetch(`https://coastdao.github.io/chainlog-ui/checksum/${address}`).then(response => {
             if (response.ok) {
                 response.text().then(checksum => {
                     if (checksum.toLowerCase() === address) {

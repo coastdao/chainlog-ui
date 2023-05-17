@@ -10,15 +10,15 @@
         <h1>Chainlog historical API</h1>
         <h2>Usage</h2>
         <h3>Get a list of all available chains and versions</h3>
-        <pre>GET <a href="https://coastdao.github.io/chainlog//api/index.json">https://coastdao.github.io/chainlog/api/index.json</a></pre>
+        <pre>GET <a href="https://coastdao.github.io/chainlog-ui/api/index.json">https://coastdao.github.io/chainlog-ui/api/index.json</a></pre>
         <h3>Get the active version on a given chain</h3>
-        <pre>GET https://coastdao.github.io/chainlog/api/{chain}/active.json</pre>
+        <pre>GET https://coastdao.github.io/chainlog-ui/api/{chain}/active.json</pre>
         <h3>Get a specific version on a given chain</h3>
-        <pre>GET https://coastdao.github.io/chainlog/api/{chain}/{version}.json</pre>
+        <pre>GET https://coastdao.github.io/chainlog-ui/api/{chain}/{version}.json</pre>
         <h2>Code examples</h2>
         You can set your JavaScript app to use this API <a href="https://github.com/coastdao/chainlog-ui/blob/main/examples/api.js">in the following way</a>:
         <pre>
-  const url = "https://coastdao.github.io/chainlog/api/mainnet/active.json";
+  const url = "https://coastdao.github.io/chainlog-ui/api/mainnet/active.json";
   const response = await fetch(url);
   const chainlog = await response.json();
   console.log(chainlog);
@@ -71,8 +71,8 @@
         The above code has the advantage that it will allow you to retreive historical data as long as you are using an archival node. In order to do that, replace <code>"latest"</code> with a specific block number.
         <h2>Available resources in this API</h2>
         <pre>
-https://coastdao.github.io/chainlog/api
-├── <a href="https://coastdao.github.io/chainlog/api/index.json">index.json</a>
+https://coastdao.github.io/chainlog-ui/api
+├── <a href="https://coastdao.github.io/chainlog-ui/api/index.json">index.json</a>
 <div id="canvas"></div>
         </pre>
         <script>

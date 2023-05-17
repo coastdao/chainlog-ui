@@ -3,10 +3,9 @@ UI and API for CoastDAO’s chainlog contract
 
 ## Production environment
 
-* [chainlog.coastdao.com](https://coastdao.github.io/chainlog/)
-* [chainlog.coastdao.com/api.html](https://coastdao.github.io/chainlog/api)
-* chainlog.coastdao.com/checksum/\<address\>
-
+* [chainlog.coastdao.com](https://coastdao.github.io/chainlog-ui/)
+* [chainlog.coastdao.com/api.html](https://coastdao.github.io/chainlog-ui/api)
+* chainlog.makerdao.com/checksum/\<address\>
 
 ## Test locally with Docker
 1. Make sure that older Docker images are removed, and containers are stopped, if you want to test new code:
