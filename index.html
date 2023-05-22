@@ -248,7 +248,7 @@
         }, versionString => {
             const versionHex = versionString.substring(2 + 2 * 32 * 2);
             const version = hex2a(versionHex);
-            divVersion.innerHTML = "Chainlog " + chainlog + " version " + version;
+            divVersion.innerHTML = "Chainlog " + chainlog + " version 0.1.1";
         });
         data = data.substring(2 + 64 * 2);
         const formatsDiv = document.createElement("div");
