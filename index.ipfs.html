@@ -13,19 +13,19 @@
     const chainLogAddress = "0x060361951aDa5365C06B7cB87D46B325747Da10D"
 
     const chainNames = {
-        "0x15F81": "FxCoreTestnet",
+        "0x15f91": "dhobyghaut",
     }
 
     const chainPrefixes = {
-        "0x15F81": "fxcoretestnet",
+        "0x15f91": "dhobyghaut",
     }
 
     const chainApiPrefixes = {
-        "0x15F81": "-fxcoretestnet",
+        "0x15f91": "dhobyghaut",
     }
 
     const nodeURLs = {
-        "0x15F81": testnetNodeURL
+        "0x15f91": testnetNodeURL
     }
 
     const setUp = () => {
@@ -208,7 +208,7 @@
     }
 
     const getChecksum = (address, callback) => {
-        fetch(`https://coastdao.github.io/chainlog-ui//checksum/${address}`).then(response => {
+        fetch(`https://coastdao.github.io/chainlog-ui/checksum/${address}`).then(response => {
             if (response.ok) {
                 response.text().then(checksum => {
                     if (checksum.toLowerCase() === address) {

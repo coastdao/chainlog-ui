@@ -13,15 +13,15 @@
     const chainLogAddress = "0x060361951aDa5365C06B7cB87D46B325747Da10D"
 
     const chainNames = {
-        "0x15f91": "FxCoreTestnet",
+        "0x15f91": "dhobyghaut",
     }
 
     const chainPrefixes = {
-        "0x15f91": "fxcoretestnet",
+        "0x15f91": "dhobyghaut",
     }
 
     const chainApiPrefixes = {
-        "0x15f91": "-fxcoretestnet",
+        "0x15f91": "dhobyghaut",
     }
 
     const nodeURLs = {
@@ -205,6 +205,16 @@
         });
     }
 
+    const copyToClipboard = text => {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+    }
+
+
     const getChecksum = (address, callback) => {
         fetch(`https://coastdao.github.io/chainlog-ui/checksum/${address}`).then(response => {
             if (response.ok) {
@@ -248,7 +258,7 @@
         }, versionString => {
             const versionHex = versionString.substring(2 + 2 * 32 * 2);
             const version = hex2a(versionHex);
-            divVersion.innerHTML = "Chainlog " + chainlog + " version 0.1.1";
+            divVersion.innerHTML = "Chainlog " + chainlog + " version " + version;
         });
         data = data.substring(2 + 64 * 2);
         const formatsDiv = document.createElement("div");
@@ -541,34 +551,37 @@
             tr.append(tdEscan);
 
 
-            //
-            // const tdAbiCopy = document.createElement("td");
-            // const abiCopy = document.createElement("button");
-            // abiCopy.setAttribute("class", "copy");
-            // abiCopy.setAttribute("name", "copy ABI");
-            // abiCopy.innerHTML = "copy ABI";
-            // abiCopy.addEventListener("click", () => {
-            //     abiCopy.innerHTML = "loading…";
-            //     abiCopy.setAttribute("disabled", true);
-            //     getAddress(keyHex, address => {
-            //         fetch("https://api" + chainApiPrefix + ".etherscan.io/api?apikey=1PX598KB4P6N6JI12SC9JVS1N3QM5QZIFB&module=contract&action=getabi"
-            //             + "&address=" + address)
-            //             .then(response => response.json()
-            //                 .then(data => {
-            //                     if (data.status === "1") {
-            //                         navigator.clipboard.writeText(data.result);
-            //                         uncopy();
-            //                         abiCopy.innerHTML = "copied";
-            //                     } else {
-            //                         console.error(data.result);
-            //                         abiCopy.innerHTML = "error";
-            //                     }
-            //                     abiCopy.removeAttribute("disabled");
-            //                 }));
-            //     });
-            // });
-            // tdAbiCopy.append(abiCopy);
-            // tr.append(tdAbiCopy);
+            const tdAbiCopy = document.createElement("td");
+            const abiCopy = document.createElement("button");
+            abiCopy.setAttribute("class", "copy");
+            abiCopy.setAttribute("name", "copy ABI");
+            abiCopy.innerHTML = "copy ABI";
+            abiCopy.addEventListener("click", () => {
+                abiCopy.innerHTML = "loading…";
+                abiCopy.setAttribute("disabled", true);
+                getAddress(keyHex, address => {
+                    fetch("./abis/" + chainApiPrefix + "/" + key + ".json")
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data != null) {
+                                var abi = JSON.stringify(data);
+                                copyToClipboard(abi);
+                                uncopy();
+                                abiCopy.innerHTML = "copied";
+                            } else {
+                                console.error(data);
+                            }
+                            abiCopy.removeAttribute("disabled");
+                        })
+                        .catch(error => {
+                            console.error("Error while fetching JSON file:", error);
+                            abiCopy.innerHTML = "unsupported";
+                            abiCopy.removeAttribute("disabled");
+                        });
+                });
+            });
+            tdAbiCopy.append(abiCopy);
+            tr.append(tdAbiCopy);
 
             table.append(tr);
         }

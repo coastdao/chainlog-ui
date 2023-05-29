@@ -1,0 +1,264 @@
+[
+  {
+    "type": "constructor",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "amt",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      }
+    ],
+    "constant": true
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "deny",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "guy",
+        "internalType": "address"
+      }
+    ],
+    "constant": false
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "bool",
+        "name": "",
+        "internalType": "bool"
+      }
+    ],
+    "name": "done",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      },
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      }
+    ],
+    "constant": true
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "gulp",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "gem",
+        "internalType": "address"
+      },
+      {
+        "type": "address[]",
+        "name": "addrs",
+        "internalType": "address[]"
+      }
+    ],
+    "constant": false
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "gulp",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "gem",
+        "internalType": "address"
+      }
+    ],
+    "constant": false
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "hope",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "guy",
+        "internalType": "address"
+      }
+    ],
+    "constant": false
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "list",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      }
+    ],
+    "constant": true
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "nope",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "guy",
+        "internalType": "address"
+      }
+    ],
+    "constant": false
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "rely",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "guy",
+        "internalType": "address"
+      }
+    ],
+    "constant": false
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "setAmt",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "gem",
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "amt_",
+        "internalType": "uint256"
+      }
+    ],
+    "constant": false
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "shut",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "gem",
+        "internalType": "contract ERC20Like_1"
+      }
+    ],
+    "constant": false
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "undo",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "usr",
+        "internalType": "address"
+      },
+      {
+        "type": "address",
+        "name": "gem",
+        "internalType": "address"
+      }
+    ],
+    "constant": false
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "wards",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      }
+    ],
+    "constant": true
+  },
+  {
+    "type": "event",
+    "name": "LogNote",
+    "inputs": [
+      {
+        "type": "bytes4",
+        "name": "sig",
+        "indexed": true
+      },
+      {
+        "type": "address",
+        "name": "usr",
+        "indexed": true
+      },
+      {
+        "type": "bytes32",
+        "name": "arg1",
+        "indexed": true
+      },
+      {
+        "type": "bytes32",
+        "name": "arg2",
+        "indexed": true
+      },
+      {
+        "type": "bytes",
+        "name": "data",
+        "indexed": false
+      }
+    ],
+    "anonymous": true
+  }
+]
