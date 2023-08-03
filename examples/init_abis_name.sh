@@ -3,8 +3,8 @@ network=$2
 if [ -z "$network" ]; then
   network="testchain"
 fi
-PROJECT_DIR=${SUBGRAPH_PROJECT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]%/*}")/.." && pwd)}
-json=$(cat "$PROJECT_DIR"/api/testnet/active.json)
+PROJECT_DIR=${PROJECT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]%/*}")/.." && pwd)}
+json=$(cat "$PROJECT_DIR"/api/"$network"/active.json)
 keys=$(echo "$json" | jq -r 'keys[]')
 DSS_DEPLOY_PROJECT_DIR=/Users/pundix045/go/src/solidity/maker/contract/dss-deploy-scripts
 
